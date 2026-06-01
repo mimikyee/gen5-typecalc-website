@@ -1,11 +1,123 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Website</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Pokemon Type Calculator</title>
+
+    <style>
+        body {
+            background: #202020;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .dropdown-row {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        select {
+            font-size: 18px;
+            padding: 8px;
+        }
+
+        button {
+            margin-top: 20px;
+            font-size: 18px;
+            padding: 10px 25px;
+            cursor: pointer;
+        }
+
+        #results {
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, world!</h1>
-    <p>This is my website.</p>
+
+    <h1>Pokemon Type Calculator</h1>
+
+    <div class="dropdown-row">
+        <select id="type1">
+            <option>Normal</option>
+            <option>Fire</option>
+            <option>Water</option>
+            <option>Electric</option>
+            <option>Grass</option>
+            <option>Ice</option>
+            <option>Fighting</option>
+            <option>Poison</option>
+            <option>Ground</option>
+            <option>Flying</option>
+            <option>Psychic</option>
+            <option>Bug</option>
+            <option>Rock</option>
+            <option>Ghost</option>
+            <option>Dragon</option>
+            <option>Dark</option>
+            <option>Steel</option>
+            <option>Fairy</option>
+        </select>
+
+        <select id="type2">
+            <option>None</option>
+            <option>Normal</option>
+            <option>Fire</option>
+            <option>Water</option>
+            <option>Electric</option>
+            <option>Grass</option>
+            <option>Ice</option>
+            <option>Fighting</option>
+            <option>Poison</option>
+            <option>Ground</option>
+            <option>Flying</option>
+            <option>Psychic</option>
+            <option>Bug</option>
+            <option>Rock</option>
+            <option>Ghost</option>
+            <option>Dragon</option>
+            <option>Dark</option>
+            <option>Steel</option>
+            <option>Fairy</option>
+        </select>
+    </div>
+
+    <button onclick="calculate()">GO</button>
+
+    <div id="results">
+        <h2>Results</h2>
+
+        <div id="strong">
+            Strong Against:
+        </div>
+
+        <br>
+
+        <div id="weak">
+            Weak Against:
+        </div>
+    </div>
+
+    <script>
+        function calculate() {
+            const type1 =
+                document.getElementById("type1").value;
+
+            const type2 =
+                document.getElementById("type2").value;
+
+            console.log(type1, type2);
+
+            // Placeholder results
+            document.getElementById("strong").innerHTML =
+                "Strong Against: TODO";
+
+            document.getElementById("weak").innerHTML =
+                "Weak Against: TODO";
+        }
+    </script>
+
 </body>
 </html>
